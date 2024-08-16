@@ -10,13 +10,14 @@ class Television:
         self.__volume = Television.MIN_VOLUME
         self.__channel = Television.MIN_CHANNEL
     """
-    Changes status
+    set values
     """
     def power(self):
         self.__status = not self.__status
     """
-    turns mute on and off
+    changes status 
     """
+    
     def mute(self):
         if self.__status:
             if not self.__muted:
@@ -26,8 +27,9 @@ class Television:
         else:
             pass
     """
-    turns the channel up 
+    turns mute on and off
     """
+    
     def channel_up(self):
         if self.__status:
             if self.__channel == Television.MAX_CHANNEL:
@@ -35,8 +37,9 @@ class Television:
             else:
                 self.__channel += 1
     """
-    turns the channel down
+    turns the channel up 
     """
+    
     def channel_down(self):
         if self.__status:
             if self.__channel == Television.MIN_CHANNEL:
@@ -44,8 +47,9 @@ class Television:
             else:
                 self.__channel -= 1
     """
-    turns the volume up 
+    turns the channel down
     """
+    
     def volume_up(self):
         if self.__status:
             self.__muted = False
@@ -56,8 +60,9 @@ class Television:
         else:
             pass
     """
-    turns the volume down
+    turns the volume up 
     """
+    
     def volume_down(self):
         if self.__status:
             self.__muted = False
@@ -68,10 +73,14 @@ class Television:
         else:
             pass
     """
-    returns the values
+    turns the volume down
     """
+    
     def __str__(self):
         if self.__muted:
             return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {self.MIN_VOLUME}"
         else:
             return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}"
+    """
+    returns the values
+    """
